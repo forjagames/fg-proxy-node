@@ -1,0 +1,34 @@
+{
+  "name": "fg-proxy-node",
+  "version": "0.0.1",
+  "description": "Node integration for Forja Games Proxy.",
+  "main": "lib/index.js",
+  "scripts": {
+    "test": "mocha -r ts-node/register tests/**/*.test.ts",
+    "coverage": "nyc -r lcov -e .ts -x \"*.test.ts\" npm run test",
+    "build": "bhic build.bhic",
+    "deploy": "npm run build && bhic -c node-tools increase-and-publish"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/forjagames/fg-proxy-node.git"
+  },
+  "author": "Forja Games",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/forjagames/fg-proxy-node/issues"
+  },
+  "homepage": "https://github.com/forjagames/fg-proxy-node#readme",
+  "devDependencies": {
+    "@types/axios": "^0.14.0",
+    "@types/chai": "^4.2.14",
+    "@types/mocha": "^8.2.0",
+    "@types/node": "^14.14.25",
+    "axios": "^0.21.1",
+    "chai": "^4.3.0",
+    "mocha": "^8.2.1",
+    "nyc": "^15.1.0",
+    "ts-node": "^9.1.1",
+    "typescript": "^4.1.3"
+  }
+}
